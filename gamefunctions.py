@@ -44,3 +44,44 @@ def getplayerinput(field):
         if (correctinput == False):
             print("Incorect input please, select again")
     return [int(plinx), int(pliny)]
+
+def checkforwin(field):
+    #check for win conditions
+    emptyspances = 0
+    winingplayer = 0
+    playercheck = 0
+    
+    for xfield in range(2):
+        for yfield in range(2):
+            if (field[xfield][yfield] > 0):
+                playercheck = field[xfield][yfield]
+                
+                #check the up
+                if (yfield > 0 and yfield < 2):
+                    if (field[xfield][yfield - 1] == playercheck):
+                        if (field[xfield][yfield] == playercheck):
+                            if (field[xfield][yfield + 1] == playercheck):
+                                winingplayer = playercheck
+                #check the sides
+                if (xfield > 0 and xfield < 2):
+                    if (field[xfield - 1][yfield] == playercheck):
+                        if (field[xfield][yfield] == playercheck):
+                            if (field[xfield + 1][yfield] == playercheck):
+                                winingplayer = playercheck
+                                
+                if (xfield == 0 and yfield == 0):
+                    #check dianague 1
+                    if (field[xfield - 1][yfield - 1] == playercheck):
+                        if (field[xfield][yfield] == playercheck):
+                            if (field[xfield + 1][yfield + 1] == playercheck):
+                                winingplayer = playercheck
+                    #check dianague 2
+                    if (field[xfield + 1][yfield - 1] == playercheck):
+                        if (field[xfield][yfield] == playercheck):
+                            if (field[xfield + - 1][yfield + 1] == playercheck):
+                                winingplayer = playercheck
+            elif(field[xfield][yfield] == 0):
+                emptyspances = emptyspances + 1
+    if (emptyspances == 0 and winingplayer > 0):
+        winingplayer = -1
+    return winingplayer
