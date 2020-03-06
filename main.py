@@ -2,6 +2,9 @@
 from random import seed
 from random import randint
 
+#my libeary 
+from gamefunctions import *
+
 #array for gamefield
 field = [
     [0,0,0],
@@ -9,32 +12,7 @@ field = [
     [0,0,0]
 ]
 
-#player symbols
-#first empty, player 1, player 2
-psymbols= [" ", "o", "x"]
 
-#print out game screen 
-def drawscreen():
-    print("  0 1 2")
-    for ynum in range(len(field)):
-        lineoutput = str(ynum)
-        for xnum in range(len(field[ynum])):
-            lineoutput = lineoutput + " " + selectplayersymbol(field[ynum][xnum])
-        print(lineoutput)
-        
-
-#select the player symbol 
-def selectplayersymbol(playernumber):
-    return psymbols[playernumber]
-
-#select random player
-def selectrandomplayer():
-    seed()
-    randomnum = randint(0, 100)
-    if (randomnum > 50):
-        return 1
-    else:
-        return 2
     
 startingplayer = selectrandomplayer()
 print("The starting player is player " + str(startingplayer))
@@ -44,7 +22,7 @@ curplayer = startingplayer
 winingplayer = 0
 while not gamewon :
     #inital draw the game field 
-    drawscreen()
+    drawscreen(field)
     
     #get player input, update field array 
     print("Player " +  str(curplayer) + " select a square")
