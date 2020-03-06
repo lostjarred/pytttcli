@@ -28,3 +28,19 @@ def selectrandomplayer():
         return 1
     else:
         return 2
+    
+def getplayerinput(field):
+    correctinput = False
+    while not correctinput:
+        plinx = input("please select x co-ord")
+        pliny = input("please select y co-ord")
+        try:
+            if (int(plinx) > -1 and int(plinx) < 3):
+                if (int(pliny) > -1 and int(pliny) < 3):
+                    if (field[int(plinx)][int(pliny)] == 0):
+                        correctinput = True
+        except ValueError:
+            print("A number has not been entered")
+        if (correctinput == False):
+            print("Incorect input please, select again")
+    return [int(plinx), int(pliny)]

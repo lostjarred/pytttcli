@@ -28,22 +28,12 @@ while not gamewon :
     print("Player " +  str(curplayer) + " select a square")
     
     #test input
-    correctinput = False
-    while not correctinput:
-        plinx = input("please select x co-ord")
-        pliny = input("please select y co-ord")
-        try:
-            if (int(plinx) > -1 and int(plinx) < 3):
-                if (int(pliny) > -1 and int(pliny) < 3):
-                    if (field[int(plinx)][int(pliny)] == 0):
-                        correctinput = True
-        except ValueError:
-            print("A number has not been entered")
-        if (correctinput == False):
-            print("Incorect input please, select again")
+    playerinputs = getplayerinput(field)
+    playerinputy = playerinputs[1]
+    playerinputx = playerinputs[0] 
                 
                 
-    field[int(pliny)][int(plinx)] = curplayer
+    field[playerinputy][playerinputx] = curplayer
     
     #alternate the players
     if (curplayer == 1):
