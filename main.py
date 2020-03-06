@@ -19,7 +19,11 @@ def drawscreen():
     print("0", field[0][0], field[0][1], field[0][2])
     print("1", field[1][0], field[1][1], field[1][2])
     print("2", field[2][0], field[2][1], field[2][2])
-    
+
+#select the player symbol 
+def selectplayersymbol(playernumber)
+    return psymbols[playernumber]
+
 #select random player
 def selectrandomplayer():
     seed()
