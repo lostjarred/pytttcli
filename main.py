@@ -57,7 +57,8 @@ while not gamewon :
         try:
             if (int(plinx) > -1 and int(plinx) < 3):
                 if (int(pliny) > -1 and int(pliny) < 3):
-                    correctinput = True
+                    if (field[int(plinx)][int(pliny)] == 0):
+                        correctinput = True
         except ValueError:
             print("A number has not been entered")
         if (correctinput == False):
