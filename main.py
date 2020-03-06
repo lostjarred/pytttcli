@@ -47,7 +47,7 @@ while not gamewon :
     drawscreen()
     
     #get player input, update field array 
-    print("Player " +  str(curplayer) + "select a square")
+    print("Player " +  str(curplayer) + " select a square")
     
     #test input
     correctinput = False
