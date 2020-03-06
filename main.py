@@ -65,7 +65,7 @@ while not gamewon :
             print("Incorect input please, select again")
                 
                 
-    field[int(plinx)][int(pliny)] = curplayer
+    field[int(pliny)][int(plinx)] = curplayer
     
     #alternate the players
     if (curplayer == 1):
