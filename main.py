@@ -27,8 +27,9 @@ while not gamewon :
     #get player input, update field array 
     print("Player " +  str(curplayer) + " select a square")
     
-    #test input
+    #get the playerinput
     playerinputs = getplayerinput(field)
+    #seperate returned values into x and y
     playerinputy = playerinputs[1]
     playerinputx = playerinputs[0] 
                 
