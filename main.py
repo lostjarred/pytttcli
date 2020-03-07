@@ -8,6 +8,7 @@ quit=False
 
 while (quit == False):
     startgame()
+    cls()
     userinput = input("Would you like to quit Y/N")
     if (userinput == "y" or userinput == "Y"):
         quit = True

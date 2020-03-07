@@ -1,4 +1,5 @@
 #import liberays
+import os
 from random import seed
 from random import randint
 
@@ -6,9 +7,14 @@ from random import randint
 #first empty, player 1, player 2
 psymbols= [" ", "o", "x"]
 
+#clearscreen, solution by https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+    
 #move some function from main script to reduce clutter
 #print out game screen 
 def drawscreen(gamefield):
+    cls()
     print("  0 1 2")
     for ynum in range(len(gamefield)):
         lineoutput = str(ynum)
@@ -131,3 +137,5 @@ def startgame():
                 print("the game has been won by player" + str(winingplayer))
             elif (winingplayer == -1):
                 print("the game has run out of spaces, the game is a draw")
+    #slight delay for message
+    input("Press any key to continue")
