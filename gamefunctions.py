@@ -34,7 +34,8 @@ def selectrandomplayer():
         return 1
     else:
         return 2
-    
+
+#get player input check if vaild either return value or ask for another     
 def getplayerinput(field):
     correctinput = False
     while not correctinput:
@@ -51,6 +52,7 @@ def getplayerinput(field):
             print("Incorect input please, select again")
     return [int(plinx), int(pliny)]
 
+#check for win conditions,return the player number, 0 if no winer, -1 if no winder + no moves remain
 def checkforwin(field):
     #check for win conditions
     emptyspances = 0
@@ -92,6 +94,7 @@ def checkforwin(field):
         winingplayer = -1
     return winingplayer
 
+#the main game function itself
 def startgame():
     #array for gamefield
     field = [
